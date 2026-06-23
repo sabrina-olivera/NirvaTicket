@@ -89,10 +89,16 @@ RF4: **Fichaje de empleados**: Registra horarios de entrada y salida, facilitand
 
 RF5: **Gráficos de ventas por sucursal**: Visualización comparativa del rendimiento entre sucursales para la toma de decisiones estratégicas.
 
-RF6: **Transferencia de mercadería entre sucursales**: Gestión del envío y recepción de stock entre locales, con impacto automático en los inventarios de origen y destino. 
+RF6: **Transferencia de mercadería entre sucursales**: Gestión del envío y recepción de stock entre locales, con impacto automático en los inventarios de origen y destino.
 
 ### No funcionales:
 
 RNF1: **Trazabilidad**: Cada transacción queda registrada y es auditable en todo momento.
 
 RNF2: **Integración con tienda online**: La plataforma se integra con servicios externos de venta online, procesando esos pedidos de forma unificada sin que el operador deba alternar entre herramientas. 
+
+---
+
+## Seguimiento del proyecto
+
+El tablero Kanban y roadmap se gestionan en: https://github.com/users/sabrina-olivera/projects/2
