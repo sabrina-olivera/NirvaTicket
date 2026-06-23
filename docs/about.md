@@ -79,70 +79,20 @@ De **Kanban** se toma:
 ### Funcionales:
 
 RF1: **Gestión de facturacion de tickets**: Permite generar, administrar y consultar comprobantes de venta. 
-RF2: **Consultar comprobantes de venta**:
-RF3: **Módulo de inventario**: Visualización del stock disponible en todo momento y modificaciones manuales cuando se requiera.
-RF4: **Recepción de mercadería**: Cada ingreso de stock queda registrado automáticamente y actualiza el inventario sin intervención adicional.
-RF5: **Fichaje de empleados**: Registra horarios de entrada y salida, facilitando el control de asistencia y la gestión de recursos humanos.
-RF6: **Gráficos de ventas por sucursal**: Visualización comparativa del rendimiento entre sucursales para la toma de decisiones estratégicas.
-RF7: **Transferencia de mercadería entre sucursales**: Gestión del envío y recepción de stock entre locales, con impacto automático en los inventarios de origen y destino. 
+
+
+RF2: **Módulo de inventario**: Visualización del stock disponible en todo momento y modificaciones manuales cuando se requiera.
+
+RF3: **Recepción de mercadería**: Cada ingreso de stock queda registrado automáticamente y actualiza el inventario sin intervención adicional.
+
+RF4: **Fichaje de empleados**: Registra horarios de entrada y salida, facilitando el control de asistencia y la gestión de recursos humanos.
+
+RF5: **Gráficos de ventas por sucursal**: Visualización comparativa del rendimiento entre sucursales para la toma de decisiones estratégicas.
+
+RF6: **Transferencia de mercadería entre sucursales**: Gestión del envío y recepción de stock entre locales, con impacto automático en los inventarios de origen y destino. 
 
 ### No funcionales:
 
 RNF1: **Trazabilidad**: Cada transacción queda registrada y es auditable en todo momento.
+
 RNF2: **Integración con tienda online**: La plataforma se integra con servicios externos de venta online, procesando esos pedidos de forma unificada sin que el operador deba alternar entre herramientas. 
-
-
-
-
-Consultar comprobantes de venta
-
-
-
-
-Módulo de inventario 
-otorga al operador la posibilidad de visualizar el stock disponible en todo momento y realizar modificaciones manuales cuando se requiera.
-
-
-Recepción de mercadería, de forma que 
-Cada ingreso de stock queda registrado automáticamente y actualice el inventario sin necesidad de intervención adicional.
-
-
-Fichaje de empleados
-registra los horarios de entrada y salida de los mismos, facilitando el control de asistencia y la posterior gestión de recursos humanos
-
-
-Visualización de los gráficos de ventas por sucursal
-
-
-
-
-Envío y recepción de mercadería entre sucursales gestionado íntegramente desde la plataforma
-
-
-elimina la necesidad de procesos manuales o externos para el traslado interno de stock. Cada movimiento entre locales queda registrado y refleja el impacto correspondiente en los inventarios de origen y destino de forma automática.
-
-
-
-
-
-
-
-
-
-
-#
-Nombre
-Descripción
-
-
- asegurando trazabilidad sobre cada transacción 
-comprobantes de venta
-
-
-
-
- la plataforma se integra con servicios externos de tiendas online, permitiendo recibir y procesar las ventas realizadas por esos canales de forma unificada, sin que el operador deba alternar entre distintas herramientas.
-
-
-
-
