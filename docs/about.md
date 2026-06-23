@@ -1,4 +1,4 @@
-NIRVA TICKET
+## NIRVA TICKET
 
 **Introducción y propuesta**
 El proyecto consiste en el **desarrollo de un sistema de gestión empresarial de tipo ERP orientado a comerciantes y empresas dedicados a la compra-venta de insumos** que operan en locales físicos. Se propone una plataforma integral de uso para personal de la empresa y supervisores, que centraliza y automatiza los principales procesos operativos y administrativos de cualquier negocio de estas características, con el objetivo de mejorar la eficiencia y brindar visibilidad completa sobre el estado del comercio en tiempo real.
@@ -44,3 +44,28 @@ módulo de recepción de mercadería, impactando automáticamente en el inventar
 
 - **Área contable / administración:** consume los datos de facturación y stock 
 generados por el sistema para el cierre contable y la gestión administrativa.
+
+---
+
+## Metodología de desarrollo: Scrumban
+
+Se adopta **Scrumban** como metodología de trabajo, una combinación entre 
+**Scrum** y **Kanban** que permite aprovechar elementos de ambos marcos según 
+las necesidades del proyecto.
+Dado que el equipo de desarrollo es mínimo, la rigidez de los ciclos de sprint 
+propios de Scrum puro no resulta adecuada, sin embargo con Scrumban se permite mantener la 
+organización y trazabilidad del trabajo a través del backlog y los requerimientos, 
+sin imponer una cadencia de entrega fija que no se condice con la realidad del equipo.
+Esta metodología se alinea además con el enfoque incremental adoptado para el 
+proyecto: las funcionalidades se desarrollan módulo a módulo, priorizando el 
+MVP, y el backlog se actualiza y reordena a medida que avanza el desarrollo.
+
+En detalle, de **Scrum** se toma:
+- El uso de un **backlog priorizado** como fuente única de trabajo pendiente
+- La definición de requerimientos e historias de usuario como unidad de planificación
+- La noción de responsabilidades sobre las tareas
+
+De **Kanban** se toma:
+- El flujo de trabajo continuo mediante un tablero de estados 
+- La ausencia de sprints fijos, adecuada al tamaño reducido del equipo de desarrollo
+- La priorización dinámica de tareas según el avance del proyecto
