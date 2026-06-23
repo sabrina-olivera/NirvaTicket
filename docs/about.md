@@ -1,9 +1,11 @@
 ## NIRVA TICKET
 
 **Introducción y propuesta**
+
 El proyecto consiste en el **desarrollo de un sistema de gestión empresarial de tipo ERP orientado a comerciantes y empresas dedicados a la compra-venta de insumos** que operan en locales físicos. Se propone una plataforma integral de uso para personal de la empresa y supervisores, que centraliza y automatiza los principales procesos operativos y administrativos de cualquier negocio de estas características, con el objetivo de mejorar la eficiencia y brindar visibilidad completa sobre el estado del comercio en tiempo real.
 
 **Alcance**
+
 Dado el alcance amplio del proyecto y la diversidad de funcionalidades que contempla, **se adopta un enfoque de desarrollo incremental organizado en módulos, priorizando aquellos que conforman el núcleo operativo del sistema. Esta decisión permite entregar un Producto Mínimo Viable (MVP) funcional** en etapas tempranas, reduciendo el riesgo y habilitando validaciones concretas antes de avanzar hacia funcionalidades de mayor complejidad.
 En resumen, este sistema representa una solución escalable para comercios que buscan modernizar su gestión operativa al integrar en una única plataforma la facturación, el control de inventario, la gestión de ventas multicanal, el registro de personal y la coordinación entre sucursales, la propuesta apunta a reducir la fragmentación de procesos y a brindar a los responsables del negocio una visión clara, centralizada y confiable de toda la operación
 
@@ -69,3 +71,78 @@ De **Kanban** se toma:
 - El flujo de trabajo continuo mediante un tablero de estados 
 - La ausencia de sprints fijos, adecuada al tamaño reducido del equipo de desarrollo
 - La priorización dinámica de tareas según el avance del proyecto
+
+---
+
+## Requerimientos
+
+### Funcionales:
+
+RF1: **Gestión de facturacion de tickets**: Permite generar, administrar y consultar comprobantes de venta. 
+RF2: **Consultar comprobantes de venta**:
+RF3: **Módulo de inventario**: Visualización del stock disponible en todo momento y modificaciones manuales cuando se requiera.
+RF4: **Recepción de mercadería**: Cada ingreso de stock queda registrado automáticamente y actualiza el inventario sin intervención adicional.
+RF5: **Fichaje de empleados**: Registra horarios de entrada y salida, facilitando el control de asistencia y la gestión de recursos humanos.
+RF6: **Gráficos de ventas por sucursal**: Visualización comparativa del rendimiento entre sucursales para la toma de decisiones estratégicas.
+RF7: **Transferencia de mercadería entre sucursales**: Gestión del envío y recepción de stock entre locales, con impacto automático en los inventarios de origen y destino. 
+
+### No funcionales:
+
+RNF1: **Trazabilidad**: Cada transacción queda registrada y es auditable en todo momento.
+RNF2: **Integración con tienda online**: La plataforma se integra con servicios externos de venta online, procesando esos pedidos de forma unificada sin que el operador deba alternar entre herramientas. 
+
+
+
+
+Consultar comprobantes de venta
+
+
+
+
+Módulo de inventario 
+otorga al operador la posibilidad de visualizar el stock disponible en todo momento y realizar modificaciones manuales cuando se requiera.
+
+
+Recepción de mercadería, de forma que 
+Cada ingreso de stock queda registrado automáticamente y actualice el inventario sin necesidad de intervención adicional.
+
+
+Fichaje de empleados
+registra los horarios de entrada y salida de los mismos, facilitando el control de asistencia y la posterior gestión de recursos humanos
+
+
+Visualización de los gráficos de ventas por sucursal
+
+
+
+
+Envío y recepción de mercadería entre sucursales gestionado íntegramente desde la plataforma
+
+
+elimina la necesidad de procesos manuales o externos para el traslado interno de stock. Cada movimiento entre locales queda registrado y refleja el impacto correspondiente en los inventarios de origen y destino de forma automática.
+
+
+
+
+
+
+
+
+
+
+#
+Nombre
+Descripción
+
+
+ asegurando trazabilidad sobre cada transacción 
+comprobantes de venta
+
+
+
+
+ la plataforma se integra con servicios externos de tiendas online, permitiendo recibir y procesar las ventas realizadas por esos canales de forma unificada, sin que el operador deba alternar entre distintas herramientas.
+
+
+
+
