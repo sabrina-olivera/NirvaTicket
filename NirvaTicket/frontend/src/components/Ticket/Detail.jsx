@@ -1,14 +1,17 @@
 
-const ProductCard = ( { name, price }  ) =>  {
+import {useState} from 'react'
+const Detail = ( { name, price }  ) =>  {
 
-  let cantidad = 1;
+  const [cantidad, setCantidad] = useState(0);
+    
   const  sumar = () => {
-    alert('sumando');
+    let nuevaCantidad = cantidad + 1
+    setCantidad(nuevaCantidad)
   }
 
   return (
     <div>
-        <h1>Artículo</h1>
+        <h1>Detalle</h1>
         <div className='card p-2'>
           <h4>  { name }</h4>
           <h5>$ { price }</h5>
@@ -22,4 +25,4 @@ const ProductCard = ( { name, price }  ) =>  {
   )
 }
 
-export default ProductCard
+export default Detail
