@@ -1,16 +1,14 @@
 import './App.css'
-import Main from './components/Main';
+import Home from './Home';
 import Header from './components/Header';
-import ProductList from './components/ProductList/ProductList';
-import Ticket from './components/Ticket/Ticket';
-
 
 function App() {
   return (
     <>
       <Header />
+      <Home />
       {/* <ProductList /> */}
-      <Ticket />
+      {/* <Ticket /> */}
     </>
   )
 }
