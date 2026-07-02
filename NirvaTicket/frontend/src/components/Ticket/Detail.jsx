@@ -1,26 +1,30 @@
-
 import {useState} from 'react'
-const Detail = ( { name, price }  ) =>  {
 
-  const [cantidad, setCantidad] = useState(0);
-    
-  const  sumar = () => {
-    let nuevaCantidad = cantidad + 1
-    setCantidad(nuevaCantidad)
-  }
+const Detail = ({item}) =>  {
+
+    const [stock, setStock] = useState(item.stock)
+
+    const add = () => {
+        let nuevoStock = stock + 1
+        setStock(nuevoStock);
+    }
+
+    const remove = () => {
+    if (stock > 0) {
+        let nuevoStock = stock - 1
+        setStock(nuevoStock);
+    }
+    }
 
   return (
     <div>
-        <h1>Detalle</h1>
-        <div className='card p-2'>
-          <h4>  { name }</h4>
-          <h5>$ { price }</h5>
-          <p> Cantidad 
-              <span> { cantidad} </span>
-          </p>
+          <h1>{item.name}</h1>
+          <p>SKU: {item.sku}</p>
+          <p>Stock: {stock}</p> 
+          {/* el mismo nombre que el State */}
           
-          <button onClick={sumar} type='button' > + </button>
-        </div>
+          <button onClick={add} type='button' > + </button>
+          <button onClick={ remove} type='button' className='btn btn-dark'> - </button>
     </div>
   )
 }

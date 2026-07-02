@@ -5,7 +5,8 @@ import { items } from './data/items'
 function Main() {
   console.log(items);
   return (
-    <ProductList items = {items} />
+    // <ProductList items = {items} />
+    <Ticket items = {items} />
   )
 }
 

@@ -1,7 +1,7 @@
 import ProductCard from './ProductCard';
 
 
-function ProductList({items}) {
+function ProductList({items}) { //desestructurando ese objeto y agarrando solo el array que necesitás.
    console.log(items)
   return (
     <>
@@ -9,7 +9,7 @@ function ProductList({items}) {
       {
       items.map( 
         item => (
-         <ProductCard 
+         <ProductCard //represento ProductCard
           item={item} 
          />
       ))}
