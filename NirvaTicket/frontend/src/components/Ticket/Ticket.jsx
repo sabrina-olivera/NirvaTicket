@@ -4,7 +4,7 @@ import Detail from './Detail';
 function Ticket({items}) {
   return (
     <>
-      <h1>Inventario</h1>
+      <h1>Ticket</h1>
       {
       items.map( 
         item => (
