@@ -1,8 +1,67 @@
 import React from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const Login = () => {
+const Login = () => {
+
+  const [ user, setUser ] = useState({  email: '', password: ''});
+  const navigate = useNavigate();
+
+  const handlerForm = (e) => {
+    e.preventDefault();
+    const userRegister = JSON.parse( localStorage.getItem('user'));
+  
+    console.log(user, userRegister)
+
+    if( !user.email.includes('@') || !user.email.includes('.')){
+      alert('Ingrese un Email Valido');
+      return;
+    }
+
+    if( user.password.trim() == "") {
+        alert('Completar la contraseña');
+        return;
+    }
+    // Enviar los datos a la API, la cual verifica usuario y contraseña
+    if( (user.email == userRegister.email) && (user.password == userRegister.password) ){
+      navigate('/dashboard');
+    } else {
+      alert('Usuario o contraseña invalidos')
+    }
+
+  }
+
+  const handlerChange = (event) => {
+    setUser( {...user, [event.target.name] : event.target.value })
+  }
+
   return (
-    <div>Login</div>
+    <main>
+        <h1>Iniciar Sesión </h1>
+        <div>
+          <div className="col-sm-8">
+              <form onSubmit={ handlerForm}>
+       
+                <label htmlFor="email">Email</label>
+                <input 
+                    value={user.email}
+                    onChange={handlerChange }
+                    name='email' //leer input
+                    type="email" className='form-control mb-2'/>
+
+                <label htmlFor="password">Contraseña</label>
+                <input 
+                    value={ user.password}
+                    onChange={handlerChange }
+                    name='password' 
+                    type="password" className='form-control mb-2' />
+
+
+                <button className='btn btn-dark' type='submit'>Ingresar</button>
+              </form>
+          </div>
+        </div>
+    </main>
   )
 }
 

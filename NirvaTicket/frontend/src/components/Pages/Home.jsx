@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 import ProductList from '../StockList/ProductList';
 import Ticket from '../Ticket/Ticket';
-import TicketDetailCard from '../Ticket/TicketDetailCard';
+import TicketDetailCard from '../TicketHistory/TicketDetailCard';
 
 function Main() {
   // NAVEGACION

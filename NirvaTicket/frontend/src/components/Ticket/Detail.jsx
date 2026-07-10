@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const Detail = ({item}) =>  {
+const Detail = ({items}) =>  {
 
     const [cantidad, setCantidad] = useState(0)
 
@@ -18,10 +18,9 @@ const Detail = ({item}) =>  {
 
   return (
     <div>
-          <h1>{item.name}</h1>
-          <p>SKU: {item.sku}</p>
-          <p>Stock: {item.stock}</p>
-          {/* el mismo nombre que el State */}
+          <h1>{items.name}</h1>
+          <p>SKU: {items.sku}</p>
+          <p>Stock: {items.stock}</p>
 
           <p>Cantidad: {cantidad}</p>
           <button onClick={add} type='button' > + </button>
