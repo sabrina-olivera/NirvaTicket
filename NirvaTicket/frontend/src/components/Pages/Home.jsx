@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-import ProductList from '../StockList/ProductList';
+import ItemList from '../Item/ItemList';
 import Ticket from '../Ticket/Ticket';
 import TicketDetailCard from '../TicketHistory/TicketDetailCard';
 
@@ -8,8 +8,8 @@ function Main() {
   // NAVEGACION
   return (
   <>
-      <Link to="/ticket"> Facturación </Link>
-      <Link to="/productList"> Inventario </Link>
+      <Link to="/Ticket"> Facturación </Link>
+      <Link to="/ItemList"> Inventario </Link>
       <Link to="/TicketDetail"> Historial de tickets </Link>
   </>
     
