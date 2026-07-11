@@ -4,8 +4,14 @@ import Header from './components/Header';
 
 import Home from './components/Pages/Home';
 import Login from './components/Auth/Login'
-import ProductList from './components/StockList/ProductList'
+
+import ItemList from './components/Item/ItemList'
+
+//cobrar
 import Ticket from './components/Ticket/Ticket'
+import Detail from './components/Ticket/Detail';
+
+//historial tickets
 import TicketDetail from './components/TicketHistory/TicketDetail';
 import TicketDetailCard from './components/TicketHistory/TicketDetailCard';
 import { NotFound } from './components/Pages/NotFound';
@@ -32,11 +38,11 @@ function App() {
         <Route path='/login' element = { <Login /> } />
 
        {/* cobrar */}
-        <Route path='/ticket' element = { <Ticket /> } />
-        {/* <Route path='/Detail' element = { <Detail items={items}/>} /> */}
+        <Route path='/Ticket' element = { <Ticket items={items} /> } />
+        <Route path='/Detail' element = { <Detail/>} />
 
        {/* inventario */}
-        <Route path='/productList' element = { <ProductList items={items} /> } />
+        <Route path='/itemList' element = { <ItemList items={items} /> } />
         {/* izquieda nombre de la prop, derechala variable - en el componente la recibo con nombre de izquierda */}
 
        {/* historial de tickets */}

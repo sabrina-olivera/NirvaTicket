@@ -1,5 +1,5 @@
 
-const ProductCard = ( {item}  ) =>  { //props
+const ItemCard = ( {item}  ) =>  { //props
 
   return (
     <>
@@ -16,4 +16,4 @@ const ProductCard = ( {item}  ) =>  { //props
   )
 }
 
-export default ProductCard
+export default ItemCard
