@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const EditProduct = () => {
+export const EditItem = () => {
 
     const [stock, setStock] = useState(item.stock)
 
@@ -30,4 +30,4 @@ export const EditProduct = () => {
   )
 }
 
-export default EditProduct
+export default EditItem
