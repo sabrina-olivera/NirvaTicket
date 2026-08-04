@@ -6,3 +6,6 @@ out/
 # Sistema operativo
 Thumbs.db
 .DS_Store
+
+# Maven
+**/target/
