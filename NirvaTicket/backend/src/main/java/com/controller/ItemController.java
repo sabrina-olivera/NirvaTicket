@@ -8,13 +8,25 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-@RequestMapping("/items")
-public class ItemController {
+@RequestMapping("/api/items")
+public class  ItemController {
 
     private final ItemService itemService;
 
     public ItemController(ItemService itemService) {
+
         this.itemService = itemService;
+    }
+
+
+    @GetMapping
+    public List<Item> findAll() {
+        return itemService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Item findById(@PathVariable Long id) {
+        return itemService.findById(id);
     }
 
     @PostMapping
@@ -22,30 +34,13 @@ public class ItemController {
         return itemService.create(item);
     }
 
-    @GetMapping
-    public List<Item> getAll() {
-        return itemService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Item getById(@PathVariable Long id) {
-
-        return itemService.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Producto inexistente."));
-    }
-
     @PutMapping("/{id}")
-    public Item update(@PathVariable Long id,
-                       @RequestBody Item item) {
-
+    public Item update(@PathVariable Long id, @RequestBody Item item) {
         return itemService.update(id, item);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-
         itemService.delete(id);
-
     }
-
 }
