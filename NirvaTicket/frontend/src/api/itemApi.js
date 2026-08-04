@@ -46,7 +46,7 @@ export async function updateItem(id, item) {
     });
 
     if (!response.ok) {
-        throw new Error("No se pudo actualizar");
+        throw new Error("No se pudo actualizar item");
     }
 
     return response.json();

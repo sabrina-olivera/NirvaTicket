@@ -1,33 +1,71 @@
-import React from 'react'
+import { useState, useEffect } from "react";
 
-export const EditItem = () => {
+function ItemEditForm({ item, onUpdate }) { //tiene que recibir funcion
 
-    const [stock, setStock] = useState(item.stock)
+    const [formData, setFormData] = useState({});
 
-    const add = () => {
-        let nuevoStock = stock + 1
-        setStock(nuevoStock);
-    }
-
-    const remove = () => {
-    if (stock > 0) {
-        let nuevoStock = stock - 1
-        setStock(nuevoStock);
-    }
-    }
+        useEffect(() => {
+        setFormData({
+            name: item.name,
+            sku: item.sku,
+            stock: item.stock,
+            price: item.price
+        });
+    }, [item]);
 
 
-  return (
-    <div>
-          <h1>{item.name}</h1>
-          <p>SKU: {item.sku}</p>
-          <p>Stock: {stock}</p> 
-          {/* el mismo nombre que el State */}
-          
-          <button onClick={add} type='button' > + </button>
-          <button onClick={ remove} type='button' className='btn btn-dark'> - </button>
-    </div>
-  )
+    const handleChange = (e) => { //e de evento. cambia solamente la propiedad cuyo nombre tenga el input
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await onUpdate(item.id, formData);
+};
+
+
+    return (
+        <div>
+
+        <form onSubmit={handleSubmit}>
+
+            <h2>Editando {item.name}</h2>
+
+            <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+            />
+
+            <input
+                name="sku"
+                value={formData.sku}
+                onChange={handleChange}
+            />
+
+            <input
+                name="stock"
+                value={formData.stock}
+                onChange={handleChange}
+            />
+
+            <input
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+            />
+
+            <button type='submit'>guardar cambios</button>
+
+
+          </form>
+
+        </div>
+    );
 }
 
-export default EditItem
+export default ItemEditForm;
