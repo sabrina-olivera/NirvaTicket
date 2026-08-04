@@ -12,6 +12,8 @@ function ItemList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [editingItem, setEditingItem] = useState(null); //ADD- EDIT
+
 
   useEffect(() => {
     fetch('http://localhost:8080/api/items')
@@ -46,7 +48,11 @@ const handleDelete = async (id) => {
 };
 
 
-
+//////EDIT
+const handleEdit = (item) => {
+    setEditingItem(item);
+    console.log(item)
+};
 
 
 
@@ -64,6 +70,7 @@ const handleDelete = async (id) => {
           item={item}  
           // izquieda nombre de la prop, derechala variable - en el componente la recibo con nombre de izquierda
           onDelete={handleDelete}
+          onEdit={handleEdit}
          />
       ))}
     </>

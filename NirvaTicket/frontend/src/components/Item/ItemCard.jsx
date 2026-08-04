@@ -1,5 +1,5 @@
 
-const ItemCard = ( {item, onDelete}  ) =>  { //props
+const ItemCard = ( {item, onDelete, onEdit}  ) =>  { //props
 
   return (
     <>
@@ -9,12 +9,12 @@ const ItemCard = ( {item, onDelete}  ) =>  { //props
           <p>SKU: {item.sku}</p>
           <p>Stock: {item.stock}</p>
 
-          <button type='button' > editar </button>
-          <button
-            type="button"
-            onClick={() => onDelete(item.id)}
-          > eliminar
-          </button>
+
+          <button type='button' onClick={() => onEdit(item)} > editar </button>
+
+
+
+          <button type="button" onClick={() => onDelete(item.id)}> eliminar </button>
 
         </div>
     </div>
