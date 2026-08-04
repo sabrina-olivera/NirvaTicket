@@ -41,7 +41,7 @@ function App() {
         <Route path='/Ticket' element = { <Ticket items={items} /> } />
         <Route path='/Detail' element = { <Detail/>} />
 
-       {/* inventario */}
+       {/* lista items - inventario */}
         <Route path='/itemList' element = { <ItemList items={items} /> } />
         {/* izquieda nombre de la prop, derechala variable - en el componente la recibo con nombre de izquierda */}
 
