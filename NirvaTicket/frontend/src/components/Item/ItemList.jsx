@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'; ///////ADD
 import ItemCard from './ItemCard';
 import ItemEditForm from './ItemEditForm'; //ADD - EDIT
+import ItemCreateForm from './ItemCreateForm'; //ADD - CREATRE
 
-import { deleteItem, updateItem } from "../../api/itemApi"; //ADD- DELETE
+
+import { deleteItem, updateItem, createItem  } from "../../api/itemApi"; //ADD
 
 
 
@@ -16,6 +18,7 @@ function ItemList() {
   const [error, setError] = useState(null);
 
   const [editingItem, setEditingItem] = useState(null); //ADD- EDIT
+  const [creatingItem, setCreatingItem] = useState(false); //ADD- CREATE
 
 
   useEffect(() => {
@@ -71,7 +74,22 @@ const handleUpdate = async (id, data) => {
     setEditingItem(null);
 };
 
+//////CREATE
+const handleCreate = async (item) => {
+    try {
+        const newItem = await createItem(item);
 
+        setItems(prevItems => [
+            ...prevItems,
+            newItem
+        ]);
+
+        setCreatingItem(false);
+
+    } catch(error) {
+        alert(error.message);
+    }
+};
 
    console.log(items)
 
@@ -80,15 +98,21 @@ const handleUpdate = async (id, data) => {
     <>
       <h1>Inventario</h1>
 
-      {
-      editingItem && ( //si al principio editingItem = null (lo es), no muestra nada
+      <button onClick={() => setCreatingItem(true)}> agregar nuevo item </button>
 
+
+      {creatingItem && (
+         <ItemCreateForm
+         onCreate={handleCreate}
+        />
+      )}
+
+      { editingItem && ( //si al principio editingItem = null (lo es), no muestra nada
         //cuando obtiene objeto, cumple condicion, muestra componente
         <ItemEditForm item={editingItem} 
         onUpdate={handleUpdate}
         />
-      )
-    }
+      )}
 
     {/* ALTERNATIVA AL editingitem && ....
     if (editingItem) {
