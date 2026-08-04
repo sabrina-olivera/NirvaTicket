@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/items";
+const BASE_URL = "http://localhost:8080/api/items";
 
 export async function getItems() {
     const response = await fetch(BASE_URL);
@@ -46,7 +46,7 @@ export async function updateItem(id, item) {
     });
 
     if (!response.ok) {
-        throw new Error("No se pudo actualizar");
+        throw new Error("No se pudo actualizar item");
     }
 
     return response.json();
