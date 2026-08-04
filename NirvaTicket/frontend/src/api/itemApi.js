@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/items";
+const BASE_URL = "http://localhost:8080/api/items";
 
 export async function getItems() {
     const response = await fetch(BASE_URL);

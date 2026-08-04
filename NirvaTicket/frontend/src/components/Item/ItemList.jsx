@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'; ///////ADD
 import ItemCard from './ItemCard';
 
+import { deleteItem } from "../../api/itemApi"; //ADD- DELETE
+
 
 function ItemList() {
 
 
-  //ADD//////////////////////////////////////
+  //API/ITEMS//////////////////////////////////////
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,6 +35,22 @@ function ItemList() {
   if (error) return <p>Error: {error}</p>;
 ////////////////////////////////
 
+
+//////DELETE
+const handleDelete = async (id) => {
+    await deleteItem(id);
+
+    setItems(prevItems =>
+        prevItems.filter(item => item.id !== id)
+    );
+};
+
+
+
+
+
+
+
    console.log(items)
 
 
@@ -45,6 +63,7 @@ function ItemList() {
           key={item.id}
           item={item}  
           // izquieda nombre de la prop, derechala variable - en el componente la recibo con nombre de izquierda
+          onDelete={handleDelete}
          />
       ))}
     </>
