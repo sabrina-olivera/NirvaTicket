@@ -1,0 +1,11 @@
+# IntelliJ IDEA (cuando se abre el monorepo completo)
+.idea/
+*.iml
+out/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Maven
+**/target/
