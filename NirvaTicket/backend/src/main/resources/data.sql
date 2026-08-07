@@ -15,6 +15,6 @@ INSERT INTO tickets (client_id, user_id, total, date) VALUES
  (1, 1, 57000.00, '2026-08-01');
 
 -- 5. Ticket details — depende de tickets e items
-INSERT INTO ticket_details (ticket_id, item_id, quantity, price) VALUES
-(1, 1, 1, 45000.00),
-(1, 2, 1, 12000.00);
+INSERT INTO ticket_details (ticket_id, item_id, quantity, price, discount_percentage) VALUES
+(1, 1, 1, 45000.00, 0),
+(1, 2, 1, 12000.00, 0);

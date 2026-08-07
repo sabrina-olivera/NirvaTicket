@@ -60,15 +60,31 @@ public class TicketService {
         BigDecimal total = BigDecimal.ZERO;
 
         //Analizamos cada elemento del ArrayList de TicketDetail
-        for (TicketDetailRequestDTO detailDto : dto.getDetails()) { //de ticketDetail solo usamos sus atributos itemId, quantity, por cómo está armado el DTO
+        for (TicketDetailRequestDTO detailDto : dto.getDetails()) { //de ticketDetail solo usamos sus atributos itemId, quantity, discount, por cómo está armado el DTO
+
             Item item = itemRepository.findById(detailDto.getItemId()) //buscamos el id del item que se ingresó)
                     .orElseThrow(() -> new ItemNotFoundException(detailDto.getItemId()));
 
-            //analizamos quantity que tiene el item seleccionado (tomamos cantidad que se cobró de cierto item)
-            //si item.getStock es más chico que la cantidad que queremos cobrar...
-            if (item.getStock() < detailDto.getQuantity()) {
-                throw new InsufficientStockException(item.getName(), item.getStock()); //error
-            }
+                //analizamos quantity que tiene el item seleccionado (tomamos cantidad que se cobró de cierto item)
+                //si item.getStock es más chico que la cantidad que queremos cobrar...
+                if (item.getStock() < detailDto.getQuantity()) {
+                    throw new InsufficientStockException(item.getName(), item.getStock()); //error
+                }
+
+                //analizamos si el item seleccionado tiene algun descuento aplicado
+                BigDecimal discount = detailDto.getDiscountPercentage() != null
+                        ? detailDto.getDiscountPercentage()
+                        : BigDecimal.ZERO;
+
+                //validamos que el descuento este dentro de valores logicos (de 0 a 100)
+                if (discount.compareTo(BigDecimal.ZERO) < 0 || discount.compareTo(BigDecimal.valueOf(100)) > 0) {
+                    throw new InvalidDiscountException(discount);
+                }
+
+                BigDecimal discountMultiplier = BigDecimal.ONE.subtract(
+                        discount.divide(BigDecimal.valueOf(100))
+                );
+                BigDecimal finalPrice = item.getPrice().multiply(discountMultiplier);
 
             //restamos la cantidad que cobramos del stock de item. guardamos el nuevo valor de stock de item
             item.setStock(item.getStock() - detailDto.getQuantity());
@@ -79,11 +95,12 @@ public class TicketService {
             detail.setTicket(ticket); //ya setteado arriba
             detail.setItem(item);
             detail.setQuantity(detailDto.getQuantity());
-            detail.setPrice(item.getPrice());
+            detail.setPrice(finalPrice); //con el precio generado, no el precio original del item
+            detail.setDiscountPercentage(discount);
 
             //obtenemos subtotal de usar, precio del item * cantidad del DTO de TicketDetailRequestDTO
             //todo: SI SE SETTEO EN FRONTEND QUE VENGA CON ESE VALOR TAMBIEN. QUE NO LO CALCULE EL BACK, NO?...
-            BigDecimal subtotal = item.getPrice().multiply(BigDecimal.valueOf(detailDto.getQuantity()));
+            BigDecimal subtotal = finalPrice.multiply(BigDecimal.valueOf(detailDto.getQuantity()));
             total = total.add(subtotal);
 
             details.add(detail);

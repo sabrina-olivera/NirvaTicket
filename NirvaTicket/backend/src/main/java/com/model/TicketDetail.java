@@ -26,6 +26,8 @@ public class TicketDetail {
 
     private BigDecimal price; // precio al momento de la venta (no el actual del item)
 
+    private BigDecimal discountPercentage;
+
     public TicketDetail() {
     }
 
@@ -68,5 +70,13 @@ public class TicketDetail {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(BigDecimal discountPercentage) {
+        this.discountPercentage = discountPercentage;
     }
 }

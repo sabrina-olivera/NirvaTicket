@@ -1,10 +1,11 @@
 package com.dto;
 
+import java.math.BigDecimal;
+
 public class TicketDetailRequestDTO {
         private Long itemId;
         private Integer quantity;
-        // getters y setters
-
+        private BigDecimal discountPercentage;
 
     public Long getItemId() {
         return itemId;
@@ -20,6 +21,14 @@ public class TicketDetailRequestDTO {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public BigDecimal getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(BigDecimal discountPercentage) {
+        this.discountPercentage = discountPercentage;
     }
 }
 
